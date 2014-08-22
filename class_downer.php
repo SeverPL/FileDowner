@@ -35,14 +35,14 @@ class mf_downer {
 			$istnieje = file_exists($this->_docelowy_full_path); //sprawdzenie czy plik o takiej nazwie ju� istnieje
 			if($istnieje==true){ //jestli taki plik juz istnieje
 				echo $this->_docelowy_full_path.' - Plik istnieje! <a href="'.$this->_docelowy_full_path.'" target="_blank">zobacz</a><br />';
-				for($i=0;$i<=10;$i++){ //wykonanie dziesi�ciu pr�b je�li plik o tej nazwie istnieje
+				for($i=0;$i<=10;$i++){ //wykonanie dziesięciu prób jeśli plik o tej nazwie istnieje
 					$this->_docelowy_nazwa = $i.'_'.$this->_docelowy_nazwa; //dopisanie cyferki przed nazwa pliku
 					$this->_docelowy_full_path = "$this->_docelowy_path".$this->_docelowy_nazwa.""; //zmontowanie docelwoej sciezki
-					$istnieje = file_exists($this->_docelowy_full_path); //sprawdzenie czy plik o takiej nazwie ju� istnieje
+					$istnieje = file_exists($this->_docelowy_full_path); //sprawdzenie czy plik o takiej nazwie już istnieje
 					if($istnieje!=true){
 						$this->_pliksrc = copy($this->_pliksrc, $this->_docelowy_full_path); //kopiowanie pliku
 						if($this->_pliksrc){
-							echo 'Kopiowanie zako�czone! - '.$this->_docelowy_full_path.' <a href="'.$this->_docelowy_full_path.'" target="_blank">zobacz</a><br />';
+							echo 'Kopiowanie zakończone! - '.$this->_docelowy_full_path.' <a href="'.$this->_docelowy_full_path.'" target="_blank">zobacz</a><br />';
 							break;
 						}
 					}
@@ -54,7 +54,7 @@ class mf_downer {
 			else{
 				$this->_pliksrc = copy($this->_pliksrc, $this->_docelowy_full_path); //kopiowanie pliku
 				if($this->_pliksrc){
-					echo 'Kopiowanie zako�czone! - '.$this->_docelowy_full_path.' <a href="'.$this->_docelowy_full_path.'" target="_blank">zobacz</a> <br />';
+					echo 'Kopiowanie zakończone! - '.$this->_docelowy_full_path.' <a href="'.$this->_docelowy_full_path.'" target="_blank">zobacz</a> <br />';
 				}
 			}
 		}
