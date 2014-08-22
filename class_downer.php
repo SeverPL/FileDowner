@@ -1,4 +1,11 @@
 <?php
+/* FileDowner
+ * utworzono 23 sierpnia 2014 23:05
+ * 
+ * wersja v. 0.1.3 - 24.08.2014 00:37
+ * 
+ */
+
 class mf_downer {
 	private $_pliksrc = null; //zrodlo pliku
 	private $_plik = null;
