@@ -1,7 +1,5 @@
 <?php
 require 'class_downer.php';
-
-
 echo '<!DOCTYPE HTML>';
 echo '<head>';
 echo "<meta name=\"author\" content=\"$autor\" />" . "\n";
