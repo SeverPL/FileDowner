@@ -11,6 +11,8 @@ class fd_bookmarks_ui extends fd_bookmarks{
 		<h1>Wprowadź adres zakładki</h1>
 		<form action="index.php?page=bookmarks&amp;action=post" method="post">
 		<input type="text" name="url" /><br />
+		<p>Wprowadź opis</p>
+		<input type="text" name="desc"/><br />
 		<input type="submit" value="Dodaj" />
 		</form>
 	<?php }
@@ -23,7 +25,7 @@ class fd_bookmarks_ui extends fd_bookmarks{
 			echo '<p>Brak zakładek!';
 		}
 		else{
-			echo '<table>';
+			echo '<table width=100%>';
 			while($row=mysql_fetch_assoc($this->_bookmarks)){
 				echo '<tr>';
 				echo '<td><a href="'.$row['LINK'].'" target="_blank">'.$row['LINK'].'</a></td>';
