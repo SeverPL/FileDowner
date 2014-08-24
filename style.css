@@ -5,6 +5,13 @@ body{
 	font-weight:300;
 	
 }
+a{
+	color:#4d89c1;
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}
 .Box{
 	font-weight:300;
 	color:#4d89c1;

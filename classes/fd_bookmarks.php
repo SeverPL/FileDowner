@@ -15,16 +15,25 @@ class fd_bookmarks{
 	protected function getBookmarks(){
 		global $mf_prefix;
 		$query = "SELECT * FROM ".$mf_prefix."bookmarks ORDER BY ID DESC";
-		$this->_bookmarks = $this->_db->mf_mysql_query($query);		
+		$ins = $this->_bookmarks = $this->_db->mf_mysql_query($query);
+		if(!$ins){
+			throw new Exception('Nie udało się pobrać zakładek !');
+		}		
 	}
 	public function addBookmark($link, $desc){
 		global $mf_prefix;
 		$query = "INSERT INTO ".$mf_prefix."bookmarks SET `LINK`='$link', `DESC`='$desc'";
-		$this->_db->mf_mysql_query($query);
+		$ins = $this->_db->mf_mysql_query($query);
+		if(!$ins){
+			throw new Exception('Nie udało dodać się zakładki do bazy danych!');
+		}
 	}
 	protected function deleteBookmark($id){
 		global $mf_prefix;
 		$query = "DELETE FROM ".$mf_prefix."bookmarks WHERE ID='$id'";
-		$this->_db->mf_mysql_query($query);
+		$ins = $this->_db->mf_mysql_query($query);
+		if(!$ins){
+			throw new Exception('Nie udało się usunąć zakładki z bazy danych!');
+		}
 	}
 }

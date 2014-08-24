@@ -8,8 +8,13 @@
 
 class fd_filemanager_ui extends fd_filemanager{
 	public function listFiles(){
-		echo '<table width=100%>';
-		$this->getDir('downloads');
-		echo '</table>';
+		try{
+			echo '<table width=100%>';
+			$this->getDir('downloads');
+			echo '</table>';
+		}
+		catch(Exception $exception){
+			echo '<p>Wystąpił błąd: <strong>'.$exception->getMessage().'</strong> W linii:'.$exception->getLine().'</p>';
+		}
 	}
 };

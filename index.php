@@ -58,25 +58,10 @@ elseif($page=='getfile'){
 elseif($page=='bookmarks'){
 	$action = $_GET['action'];
 	if(!isset($action)){
-		?>
-		<div class="Box">
-		<?php 
-		$bookmarks -> bookmarkAdder();
-		$bookmarks -> showBookmarks();
-		?>
-		</div>
-		<?php 
+		$bookmarks -> showMain();
 	}
 	elseif($action=='post'){
-		?>
-		<div class="Box">
-		<?php 
-		$bookmarks->addBookmark($_POST['url'], $_POST['desc']);
-		$bookmarks -> bookmarkAdder();
-		$bookmarks -> showBookmarks();
-		?>
-		</div>
-		<?php 
+		$bookmarks -> postBookmark();
 	}
 }
 elseif($page=='files'){
