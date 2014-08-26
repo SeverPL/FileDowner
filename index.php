@@ -29,6 +29,9 @@ $page = $_GET['page'];
 		<a href="index.php">Pobieranie</a>
 	</div>
 	<div class="MenuBox">
+		<a href="index.php?page=pbdownload">Pobieranie z Pb</a>
+	</div>
+	<div class="MenuBox">
 		<a href="index.php?page=files">Pliki</a>
 	</div>
 	<div class="MenuBox">
@@ -44,16 +47,28 @@ if(!isset($page)){
 <?php
 } 
 elseif($page=='getfile'){
-	$url = $_POST['url'];
 ?>
 <div class="Box">
 	<h1>Pobieranie pliku...</h1>
 	<?php 
-	$file->getfile($url);
-	$file->showDownloader();
+	$file->page_getfile();
 	?>
 </div>
 <?php 
+}
+elseif($page=='pbdownload'){
+	echo '<div class="Box">';
+	$file->showPbDownloader();
+	echo '</div>';
+}
+elseif($page=='pbgetfile'){
+	?>
+	<div class="Box">
+	<?php 
+	$file->page_pbgetfile();
+	?>
+	</div>
+	<?php 
 }
 elseif($page=='bookmarks'){
 	$action = $_GET['action'];

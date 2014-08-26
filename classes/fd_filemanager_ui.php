@@ -10,7 +10,11 @@ class fd_filemanager_ui extends fd_filemanager{
 	public function listFiles(){
 		try{
 			echo '<table width=100%>';
-			$this->getDir('downloads');
+			if(!isset($_GET['dir'])){ $dir = 'downloads';}
+			else{
+				$dir = 'downloads/'.$_GET['dir'];
+			}
+			$this->getDir($dir);
 			echo '</table>';
 		}
 		catch(Exception $exception){

@@ -2,7 +2,7 @@
 /* FileDowner - Bookmarks
  * utworzono 23 sierpnia 2014 10:00
 *
-* wersja v. 0.1.1 - 24.08.2014 10:45
+* wersja v. 0.1.2 - 26.08.2014 00:06
 *
 */
 
@@ -31,7 +31,7 @@ class fd_bookmarks_ui extends fd_bookmarks{
 				echo '<tr>';
 				echo '<td><a href="'.$row['LINK'].'" target="_blank">'.$row['LINK'].'</a></td>';
 				echo '<td>'.$row['DESC'].'</td>';
-				echo '<td></td>';
+				echo '<td><a href=""><img title="Usuń" alt="Usuń" border=0 src="icons/delete.png"></a></td>';
 				echo '</tr>';		
 			}
 			echo '<table>';
@@ -44,7 +44,7 @@ class fd_bookmarks_ui extends fd_bookmarks{
 	public function postBookmark(){
 		echo '<div class="Box">';
 		try{
-			$bookmarks->addBookmark($_POST['url'], $_POST['desc']);
+			$this->addBookmark($_POST['url'], $_POST['desc']);
 		}
 		catch(Exception $exception){
 			echo '<p>Wystąpił błąd! '.$exception->getMessage();

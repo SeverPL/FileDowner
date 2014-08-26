@@ -67,6 +67,11 @@ transition: all 250ms ease;
 	background-color:#4d89c1;
 	color:white;
 }
+.Box select{
+	font-size:16px;
+	margin-bottom:10px;
+	color:#4d89c1;
+}
 .Box h1{
 	font-weight:300;
 }
@@ -114,4 +119,7 @@ transition: all 250ms ease;
 }
 .MenuBox:hover a{
 	color:white;
+}
+.FileManagerFolder{
+	background-color:#f1f1f1;
 }
